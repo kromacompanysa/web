@@ -3,10 +3,452 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link data-trunk rel="tailwind-css" href="styles/tailwind.css" />
+        <link data-trunk rel="copy-dir" href="/assets/images" />
+        <link data-trunk rel="copy-dir" href="/assets/icon" />
+        <link data-trunk rel="icon" href="assets/images/favicon.ico" />
     </head>
     <body>
-        <h1 class="text-3xl font-bold underline">Hello world!</h1>
-        <p></p>
+        <header class="w-full bg-white shadow-md fixed top-0 z-50">
+            <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
+                <!-- Logo -->
+                <a href="/" class="flex items-center">
+                    <img src="/images/kroma.png" alt="Kroma Logo" />
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8 items-center font-medium text-gray-700">
+                    <a href="/pages/about" class="hover:text-blue-600 transition">¿Quiénes somos?</a>
+
+                    <!-- Dropdown Clinica dental -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 hover:text-blue-600 transition">
+                            <span>Clinica dental</span>
+                            <svg
+                                class="w-4 h-4 transform group-hover:rotate-180 transition"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.2l3.71-3.97a.75.75 0 111.08 1.04l-4.25 4.55a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                                    clip-rule="evenodd"
+                                />
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition"
+                        >
+                            <ul class="py-2">
+                                <li>
+                                    <a
+                                        href="/pages/the-dentlit-academy-masters-path"
+                                        class="block px-4 py-2 hover:bg-gray-100"
+                                        >Master Path</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="/collections/adhesive-rehabilitation-and-tooth-preparation-courses"
+                                        class="block px-4 py-2 hover:bg-gray-100"
+                                        >Module 1</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="/collections/the-oepic-science-experience"
+                                        class="block px-4 py-2 hover:bg-gray-100"
+                                        >Module 2</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="/collections/live-patient-treatment-course"
+                                        class="block px-4 py-2 hover:bg-gray-100"
+                                        >Module 3</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown Cursos -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 hover:text-blue-600 transition">
+                            <span>Cursos</span>
+                            <svg
+                                class="w-4 h-4 transform group-hover:rotate-180 transition"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.2l3.71-3.97a.75.75 0 111.08 1.04l-4.25 4.55a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                                    clip-rule="evenodd"
+                                />
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition"
+                        >
+                            <ul class="py-2">
+                                <li>
+                                    <a
+                                        href="/pages/the-dentlit-academy-masters-path"
+                                        class="block px-4 py-2 hover:bg-gray-100"
+                                        >Master Path</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="/collections/adhesive-rehabilitation-and-tooth-preparation-courses"
+                                        class="block px-4 py-2 hover:bg-gray-100"
+                                        >Module 1</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="/collections/the-oepic-science-experience"
+                                        class="block px-4 py-2 hover:bg-gray-100"
+                                        >Module 2</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="/collections/live-patient-treatment-course"
+                                        class="block px-4 py-2 hover:bg-gray-100"
+                                        >Module 3</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="/pages/contact" class="hover:text-blue-600 transition">Contacto</a>
+
+                    <!-- Cart -->
+                    <a href="/cart" class="relative flex items-center hover:text-blue-600">
+                        <div class="w-4 h-4 text-black-600">
+                            <link data-trunk rel="inline" href="assets/icon/cart4.svg" />
+                        </div>
+                    </a>
+                </nav>
+
+                <!-- Mobile Hamburger -->
+                <button id="menu-btn" class="md:hidden flex items-center text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"
+                        />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Nav -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+                <ul class="flex flex-col space-y-2 p-4">
+                    <li><a href="/pages/about" class="block hover:text-blue-600">About</a></li>
+                    <li>
+                        <a href="/pages/live-in-person-experiences" class="block hover:text-blue-600"
+                            >Live in Person Experiences</a
+                        >
+                    </li>
+                    <li>
+                        <a href="/pages/online-courses-and-free-content" class="block hover:text-blue-600"
+                            >Online Courses and Content</a
+                        >
+                    </li>
+                    <li><a href="/pages/cursos-en-espanol" class="block hover:text-blue-600">Cursos en Español</a></li>
+                    <li><a href="/pages/books-and-products" class="block hover:text-blue-600">Books & Products</a></li>
+                    <li><a href="/pages/contact" class="block hover:text-blue-600">Contact</a></li>
+                </ul>
+            </div>
+        </header>
+        <section class="flex items-center justify-center text-center pt-32 bg-white">
+            <div class="max-w-2xl mx-auto px-4">
+                <ul class="space-y-6">
+                    <li>
+                        <span class="block text-sm uppercase tracking-widest text-blue-600 font-semibold">
+                            Bienvenido a Koma Academy
+                        </span>
+                        <h1 class="mt-2 text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
+                            Donde la sonrisa se convierte en arte.
+                        </h1>
+                    </li>
+                    <li>
+                        <h2 class="text-lg md:text-xl text-gray-600 font-medium">
+                            Un enfoque moderno de la odontología basada en la evidencia.<br />
+                            Fundada por la Dra. Kelly y Dr. Jujuy
+                        </h2>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-5xl mx-auto px-4">
+                <!-- Section Heading -->
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
+                        Elige el camino en Kroma que mejor se adapte a tu estilo de aprendizaje.
+                    </h2>
+                </div>
+
+                <!-- Grid Items -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
+                    <!-- Item 1 -->
+                    <a
+                        href="/pages/online-courses-and-free-content"
+                        class="flex flex-col items-center p-6 bg-white shadow-md rounded-2xl hover:shadow-lg transition"
+                    >
+                        <span class="text-lg font-medium text-gray-800 mb-4">
+                            Curso <br />
+                            Tema 1
+                        </span>
+                        <img
+                            src="//dentlit.com/cdn/shop/files/dentlit-online-course-thumbnail_2x_103da2ba-7fdc-4b58-ba35-39ceec0b05b1_160x160@2x.png?v=1675373315"
+                            alt="Online Courses"
+                            class="w-28 h-28 object-contain"
+                        />
+                    </a>
+
+                    <!-- Item 2 -->
+                    <a
+                        href="/pages/live-in-person-experiences"
+                        class="flex flex-col items-center p-6 bg-white shadow-md rounded-2xl hover:shadow-lg transition"
+                    >
+                        <span class="text-lg font-medium text-gray-800 mb-4">
+                            Curso <br />
+                            Tema 2
+                        </span>
+                        <img
+                            src="//dentlit.com/cdn/shop/files/dentlit-life-in-person-thumbnail_2x_b695378b-3051-4189-84a3-97c0947a3908_160x160@2x.png?v=1675373337"
+                            alt="Live In Person Experiences"
+                            class="w-28 h-28 object-contain"
+                        />
+                    </a>
+
+                    <!-- Item 3 -->
+                    <a
+                        href="/pages/books-and-products"
+                        class="flex flex-col items-center p-6 bg-white shadow-md rounded-2xl hover:shadow-lg transition"
+                    >
+                        <span class="text-lg font-medium text-gray-800 mb-4">
+                            Curso <br />
+                            Tema 3
+                        </span>
+                        <img
+                            src="//dentlit.com/cdn/shop/files/books-and-products-thumbnail_2x_8c716495-022a-4fd4-8681-2b4298ac41a9_160x160@2x.png?v=1675373353"
+                            alt="Books and Products"
+                            class="w-28 h-28 object-contain"
+                        />
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+                    <!-- Box 1 -->
+                    <div class="h-32 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 font-medium">
+                        Box 1
+                    </div>
+
+                    <!-- Box 2 -->
+                    <div class="h-32 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 font-medium">
+                        Box 2
+                    </div>
+
+                    <!-- Box 3 -->
+                    <div class="h-32 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 font-medium">
+                        Box 3
+                    </div>
+
+                    <!-- Box 4 -->
+                    <div class="h-32 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 font-medium">
+                        Box 4
+                    </div>
+
+                    <!-- Box 5 -->
+                    <div class="h-32 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 font-medium">
+                        Box 5
+                    </div>
+
+                    <!-- Box 6 -->
+                    <div class="h-32 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 font-medium">
+                        Box 6
+                    </div>
+
+                    <!-- Box 7 -->
+                    <div class="h-32 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 font-medium">
+                        Box 7
+                    </div>
+
+                    <!-- Box 8 -->
+                    <div class="h-32 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 font-medium">
+                        Box 8
+                    </div>
+
+                    <!-- Box 9 -->
+                    <div class="h-32 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 font-medium">
+                        Box 9
+                    </div>
+
+                    <!-- Box 10 -->
+                    <div class="h-32 bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 font-medium">
+                        Box 10
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="bg-gray-900 text-white py-16">
+            <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Left Column -->
+                <div class="flex flex-col space-y-8">
+                    <!-- Newsletter -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Stay Connected</h4>
+                        <form class="flex flex-col sm:flex-row gap-3">
+                            <input
+                                type="email"
+                                placeholder="Subscribe and let's talk prosth"
+                                required
+                                class="flex-1 px-4 py-2 rounded-md text-gray-900 focus:ring-2 focus:ring-blue-500 outline-none"
+                            />
+                            <button
+                                type="submit"
+                                class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-md font-medium transition"
+                            >
+                                Sign Up
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div>
+                        <ul class="flex space-x-4">
+                            <li>
+                                <a
+                                    href="https://www.facebook.com/BestofProsth/"
+                                    target="_blank"
+                                    class="text-gray-400 hover:text-white transition"
+                                >
+                                    <i class="fab fa-facebook-f text-xl"></i>
+                                    <span class="sr-only">Facebook</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="http://instagram.com/dr_miguel_ortiz/"
+                                    target="_blank"
+                                    class="text-gray-400 hover:text-white transition"
+                                >
+                                    <i class="fab fa-instagram text-xl"></i>
+                                    <span class="sr-only">Instagram</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Connect CTA -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Connect With Dr. Miguel A. Ortiz</h4>
+                        <a
+                            href="https://dentlit.com/pages/contact"
+                            class="inline-block bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-md font-medium transition"
+                        >
+                            Contracting Dr. Miguel A. Ortiz For An Event
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column (spans 2 cols on desktop) -->
+                <div class="md:col-span-2">
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
+                        <p class="text-lg mb-2">
+                            Is The Event You Want <span class="font-semibold text-blue-400">Full</span> or
+                            <span class="font-semibold text-blue-400">Sold Out</span>?
+                        </p>
+                        <p class="text-sm text-gray-300 mb-6">
+                            Don’t worry. Sign up for the DentLit Academy Waitlist and as soon as a spot or a new course
+                            opens, we will let you know.
+                        </p>
+
+                        <form class="space-y-4">
+                            <input
+                                type="text"
+                                placeholder="Full Name*"
+                                required
+                                class="w-full px-4 py-3 rounded-md text-gray-900 border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
+                            />
+                            <input
+                                type="tel"
+                                placeholder="Phone Number*"
+                                required
+                                class="w-full px-4 py-3 rounded-md text-gray-900 border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
+                            />
+                            <input
+                                type="email"
+                                placeholder="Email*"
+                                required
+                                class="w-full px-4 py-3 rounded-md text-gray-900 border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
+                            />
+
+                            <select
+                                required
+                                class="w-full px-4 py-3 rounded-md text-gray-900 border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
+                            >
+                                <option value="">Which event do you want to attend?*</option>
+                                <option value="Dental Photography Courses">Dental Photography Courses</option>
+                                <option value="Adhesive Rehabilitation and Tooth Preparation Courses">
+                                    Adhesive Rehabilitation and Tooth Preparation Courses
+                                </option>
+                                <option value="Booking Request">Booking Request</option>
+                                <option value="Dental Photography Products">Dental Photography Products</option>
+                                <option value="Shade Taking Instruments">Shade Taking Instruments</option>
+                                <option value="Dental Burs">Dental Burs</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Other">Other</option>
+                            </select>
+
+                            <!-- Checkbox -->
+                            <label class="flex items-start text-xs text-gray-400 space-x-2">
+                                <input type="checkbox" required class="mt-1" />
+                                <span
+                                    >By submitting your information, you agree to receive emails and text marketing
+                                    information from us. You can unsubscribe anytime.</span
+                                >
+                            </label>
+
+                            <!-- Submit -->
+                            <button
+                                type="submit"
+                                class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-md font-medium transition"
+                            >
+                                Sign Up
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-400">
+                <p class="mb-2">
+                    <a href="/policies/terms-of-service" class="hover:text-white">Terms of service</a> |
+                    <a href="/policies/refund-policy" class="hover:text-white">Refund policy</a>
+                </p>
+                <p>© 2025, Dr. Jaime Ramos. All Rights Reserved</p>
+            </div>
+        </footer>
+
+        <script>
+            // Mobile Menu Toggle
+            document.getElementById("menu-btn").addEventListener("click", () => {
+                document.getElementById("mobile-menu").classList.toggle("hidden");
+            });
+        </script>
     </body>
 </html>
