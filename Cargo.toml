@@ -1,5 +1,5 @@
 [package]
-name = "kroma-front"
+name = "web"
 version = "0.1.0"
 edition = "2024"
 
@@ -7,4 +7,5 @@ edition = "2024"
 console_error_panic_hook = "0.1.7"
 console_log = "1.0.0"
 leptos = { version = "0.8.9", features = ["csr"] }
+leptos_router = "0.8.7"
 log = "0.4.28"

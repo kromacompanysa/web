@@ -1,11 +1,59 @@
 use leptos::prelude::*;
+use leptos_router::components::{Route, Router, Routes};
+use leptos_router::path;
 
 pub fn main() {
     _ = console_log::init_with_level(log::Level::Debug);
     console_error_panic_hook::set_once();
     mount_to_body(|| {
-        view! { <SimpleCounter initial_value=0 step=1 /> }
+        view! {
+            <Router>
+                <App />
+            </Router>
+        }
     })
+}
+
+#[component]
+pub fn App() -> impl IntoView {
+    view! {
+        <Routes fallback=|| view! { <h1>"Not Found"</h1> }>
+            <Route path=path!("/") view=Home/>
+            <Route path=path!("/about") view=About/>
+            <Route path=path!("/academy") view=Academy/>
+            <Route path=path!("/*any") view=|| view! { <h1>"Not Found"</h1> }/>
+        </Routes>
+    }
+}
+
+#[component]
+pub fn home() -> impl IntoView {
+    view! {
+        <div class="p-4">
+            <h1 class="text-2xl font-bold mb-4">"Home Page"</h1>
+            <SimpleCounter initial_value=0 step=1 />
+        </div>
+    }
+}
+
+#[component]
+pub fn about() -> impl IntoView {
+    view! {
+        <div class="p-4">
+            <h1 class="text-2xl font-bold mb-4">"About page"</h1>
+            <SimpleCounter initial_value=0 step=1 />
+        </div>
+    }
+}
+
+#[component]
+pub fn academy() -> impl IntoView {
+    view! {
+        <div class="p-4">
+            <h1 class="text-2xl font-bold mb-4">"Academy page"</h1>
+            <SimpleCounter initial_value=0 step=1 />
+        </div>
+    }
 }
 
 #[component]
