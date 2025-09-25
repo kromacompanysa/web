@@ -1,2 +1,5 @@
 [build]
 dist = "docs"
+
+[profile.release.build]
+public_url = "/web/"
