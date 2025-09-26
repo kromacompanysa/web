@@ -11,8 +11,8 @@ release = true
 # Output folder (GitHub Pages expects docs/)
 dist = "docs"
 
-# All static files will be served from https://<user>.github.io/web/
-public_url = "/web/"
+# All static files will be served from https://<user>.github.io/
+public_url = "/"
 
 # Optional optimizations
 filehash = true      # Cache-busting filenames (good for GH Pages)
