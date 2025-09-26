@@ -1,5 +1,19 @@
+trunk-version = "0.21.14"
+
 [build]
+# Entry point
+target = "index.html"
+html_output = "index.html"
+
+# Build in release mode (for optimized wasm/js)
+release = true
+
+# Output folder (GitHub Pages expects docs/)
 dist = "docs"
 
-[profile.release.build]
+# All static files will be served from https://<user>.github.io/web/
 public_url = "/web/"
+
+# Optional optimizations
+filehash = true      # Cache-busting filenames (good for GH Pages)
+minify = "on_release"
