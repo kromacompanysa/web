@@ -2,6 +2,8 @@ use leptos::mount::mount_to_body;
 use leptos::prelude::*;
 use leptos_router::components::Router;
 
+mod components;
+mod layouts;
 mod pages;
 mod routes;
 
