@@ -1,25 +1,21 @@
 use leptos::prelude::*;
 use leptos_router::components::Outlet;
 
+use crate::components::footer::BaseFooter;
+use crate::components::header::BaseHeader;
+
 #[component]
 pub fn BaseLayout() -> impl IntoView {
     view! {
         <div class="app-container">
-            <header>
-                <nav>
-                    <a href="/">"Home"</a>
-                    <a href="/about">"About"</a>
-                    <a href="/academy">"Academy"</a>
-                </nav>
-            </header>
+
+            <BaseHeader/>
 
             <main>
                 <Outlet />
             </main>
 
-            <footer>
-                <p>"© 2025 My Leptos App"</p>
-            </footer>
+            <BaseFooter />
         </div>
     }
 }
