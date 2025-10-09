@@ -1,28 +1,10 @@
-.swiper {
-    width: 100%;
-    height: 100%;
-}
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* === Course Carousel Styles === */
-.course-swiper {
+/* === Hero Carousel Styles === */
+.hero-swiper {
     width: 100%;
     height: 100%;
 }
 
-.course-slide {
+.hero-slide {
     text-align: center;
     font-size: 18px;
     display: flex;
@@ -30,9 +12,30 @@
     align-items: center;
 }
 
-.course-slide img {
+.hero-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* === Box Grid Carousel Styles === */
+.boxes-swiper {
+    width: 100%;
+    height: 100%; /* important: Swiper grid needs a defined height */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.boxes-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #333;
+    color: white;
+    height: calc((100% - 30px) / 2) !important;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

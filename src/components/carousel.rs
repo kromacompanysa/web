@@ -4,16 +4,16 @@ use leptos::prelude::*;
 pub fn BaseCarousel() -> impl IntoView {
     // ✅ Return the view
     view! {
-        <section class="py-16 bg-gray-50">
+        <section class="pt-16 bg-gray-50">
             <div class="max-w-5xl mx-auto px-4">
-                <div class="swiper mySwiper max-w-5xl mx-auto px-4">
+                <div class="swiper mySwiperHero hero-swiper max-w-5xl mx-auto px-4">
                     <div class="text-center mb-12">
                         <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
                             {"Elige el camino en Kroma Academy que mejor se adapte a tu estilo de aprendizaje."}
                         </h2>
                     </div>
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                        <div class="swiper-slide hero-slide">
                             <a
                             href="/pages/live-in-person-experiences"
                             class="relative block w-full h-64 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition"
@@ -30,7 +30,7 @@ pub fn BaseCarousel() -> impl IntoView {
                             </span>
                             </a>
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide hero-slide">
                             <a
                             href="/pages/live-in-person-experiences"
                             class="relative block w-full h-64 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition"
@@ -47,7 +47,7 @@ pub fn BaseCarousel() -> impl IntoView {
                             </span>
                             </a>
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide hero-slide">
                             <a
                             href="/pages/live-in-person-experiences"
                             class="relative block w-full h-64 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition"
@@ -64,7 +64,7 @@ pub fn BaseCarousel() -> impl IntoView {
                             </span>
                             </a>
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide hero-slide">
                             <a
                             href="/pages/live-in-person-experiences"
                             class="relative block w-full h-64 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition"
@@ -81,7 +81,7 @@ pub fn BaseCarousel() -> impl IntoView {
                             </span>
                             </a>
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide hero-slide">
                             <a
                             href="/pages/live-in-person-experiences"
                             class="relative block w-full h-64 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition"
