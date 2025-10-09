@@ -8,14 +8,21 @@
         <!-- Copy asset directories -->
         <link data-trunk rel="copy-dir" href="assets" />
         <!-- Favicon -->
+        <link data-trunk rel="css" href="assets/styles/custom.css" />
+        <link data-trunk rel="css" href="assets/styles/custom.css" />
         <link data-trunk rel="icon" href="assets/images/favicon.ico" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
     </head>
     <body>
-        <script>
-            // Mobile Menu Toggle
-            document.getElementById("menu-btn").addEventListener("click", () => {
-                document.getElementById("mobile-menu").classList.toggle("hidden");
-            });
-        </script>
+        <div id="kroma"></div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script
+            data-trunk
+            rel="copy-file"
+            src="assets/scripts/custom.js"
+        ></script>
     </body>
 </html>
