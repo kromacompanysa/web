@@ -7,10 +7,10 @@ pub fn HeaderDropdownMenu(
 ) -> impl IntoView {
     view! {
         <div class="relative group">
-            <button class="flex items-center space-x-1 hover:text-blue-600 transition">
+            <button class="flex items-center space-x-1 transition hover:text-blue-600">
                 <span>{title}</span>
                 <svg
-                    class="w-4 h-4 transform group-hover:rotate-180 transition"
+                    class="w-4 h-4 transition transform group-hover:rotate-180"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                 >
@@ -21,20 +21,20 @@ pub fn HeaderDropdownMenu(
                     />
                 </svg>
             </button>
-            <div class="absolute left-0 w-64 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition duration-200">
+            <div class="absolute left-0 invisible w-64 bg-white rounded-lg shadow-lg opacity-0 transition duration-200 group-hover:visible group-hover:opacity-100">
                 <ul class="py-2">
                     <For
-                        each=move || items.iter().cloned()
-                        key=|(href, _label)| href.to_string()
-                        children=move |(href, label)| {
+                        each={move || items.iter().cloned()}
+                        key={|(href, _label)| href.to_string()}
+                        children={move |(href, label)| {
                             view! {
                                 <li>
-                                    <a href={href} class="block px-4 py-2 hover:bg-gray-100">
+                                    <a href={href} class="block py-2 px-4 hover:bg-gray-100">
                                         {label}
                                     </a>
                                 </li>
                             }
-                        }
+                        }}
                     />
                 </ul>
             </div>

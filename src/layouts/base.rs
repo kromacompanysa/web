@@ -9,7 +9,7 @@ pub fn BaseLayout() -> impl IntoView {
     view! {
         <div class="app-container">
 
-            <BaseHeader/>
+            <BaseHeader />
 
             <main>
                 <Outlet />
