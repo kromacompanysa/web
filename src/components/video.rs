@@ -10,16 +10,18 @@ pub fn VideoPlayer(
 ) -> impl IntoView {
     let src = src.into();
     view! {
-        <video
-            class="video-player"
-            src={src}
-            autoplay={autoplay}
-            controls={controls}
-            loop={loop_}
-            playsinline
-            muted={muted}
-        >
-            {"Your browser does not support the video tag."}
-        </video>
+        <div class="rounded-lg overflow-hidden shadow-lg">
+            <video
+                class="w-full h-auto"
+                src={src}
+                autoplay={autoplay}
+                controls={controls}
+                loop={loop_}
+                playsinline
+                muted={muted}
+            >
+                {"Your browser does not support the video tag."}
+            </video>
+        </div>
     }
 }

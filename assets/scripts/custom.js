@@ -63,9 +63,9 @@ window.addEventListener("TrunkApplicationStarted", () => {
       clickable: true,
     },
     breakpoints: {
-      320: { slidesPerView: 3, grid: { rows: 2, fill: "row" } },
-      640: { slidesPerView: 6, grid: { rows: 2, fill: "row" } },
-      1024: { slidesPerView: 8, grid: { rows: 2, fill: "row" } },
+      320: { slidesPerView: 1, grid: { rows: 2, fill: "row" } },
+      640: { slidesPerView: 3, grid: { rows: 2, fill: "row" } },
+      1024: { slidesPerView: 5, grid: { rows: 2, fill: "row" } },
     },
   });
 });

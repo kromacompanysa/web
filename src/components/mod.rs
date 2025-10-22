@@ -1,4 +1,3 @@
-pub mod button;
 pub mod carousel;
 pub mod footer;
 pub mod grid;

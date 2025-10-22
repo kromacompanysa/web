@@ -9,7 +9,7 @@ pub fn BaseHeader() -> impl IntoView {
             <div class="flex justify-between items-center py-3 px-4 mx-auto max-w-7xl md:py-4">
                 <a href="/" class="flex items-center">
                     <img
-                        src="assets/images/kroma-png-negro.png"
+                        src="assets/images/kroma_png_black.png"
                         alt="Kroma Logo"
                         class="w-24 h-auto sm:w-32 md:w-40 lg:w-48 xl:w-56"
                     />
