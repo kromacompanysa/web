@@ -23,98 +23,104 @@ pub fn BasePreFooter() -> impl IntoView {
                 <div class="md:col-span-2">
                     <div class="p-8 bg-gray-800 rounded-lg shadow-lg">
                         <p class="mb-2 text-lg">
-                            Es el curso que estas buscando
-                            <span class="font-semibold text-blue-400">tenemos</span>tambien
-                            <span class="font-semibold text-blue-400">Más Productos</span>?
+                            {"Es el curso que estas buscando"}
+                            <span class="font-semibold text-blue-400">{"tenemos"}</span>tambien
+                            <span class="font-semibold text-blue-400">{"Más Productos"}</span>?
                         </p>
                         <p class="mb-6 text-sm text-gray-300">
-                            No te preocupes. Inscríbete en la lista de espera de DentLit Academy y, en cuanto se abra un
-                            cupo o un nuevo curso, te lo haremos saber.
+                            {"No te preocupes. Inscríbete en la lista de espera de DentLit Academy y, en cuanto se abra un
+                            cupo o un nuevo curso, te lo haremos saber."}
                         </p>
 
-                        <form class="space-y-4">
-                            <input
-                                type="text"
-                                placeholder="Nombre completo*"
-                                required
-                                class="py-3 px-4 w-full text-gray-900 rounded-md border border-gray-300 outline-none focus:ring-2 focus:ring-blue-500"
-                            />
-                            <input
-                                type="tel"
-                                placeholder="Numero de telefono*"
-                                required
-                                class="py-3 px-4 w-full text-gray-900 rounded-md border border-gray-300 outline-none focus:ring-2 focus:ring-blue-500"
-                            />
-                            <input
-                                type="email"
-                                placeholder="Email*"
-                                required
-                                class="py-3 px-4 w-full text-gray-900 rounded-md border border-gray-300 outline-none focus:ring-2 focus:ring-blue-500"
-                            />
+                        <form class="mx-auto space-y-5 max-w-lg">
+                            // <!-- Nombre -->
+                            <div>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Nombre completo*"
+                                    required
+                                    class="py-3 px-4 w-full placeholder-gray-500 text-gray-900 rounded-lg border border-gray-300 transition focus:border-red-500 focus:ring-2 focus:ring-red-500 focus:outline-none"
+                                />
+                            </div>
 
-                            <select
-                                required
-                                class="py-3 px-4 w-full text-gray-900 rounded-md border border-gray-300 outline-none focus:ring-2 focus:ring-blue-500"
-                            >
-                                <option value="">
-                                    {"¿Cual es el evento que desea asistir?*"}
-                                </option>
-                                <option value="Dental Photography Courses">
-                                    Dental Photography Courses
-                                </option>
-                                <option value="Adhesive Rehabilitation and Tooth Preparation Courses">
-                                    Adhesive Rehabilitation and Tooth Preparation Courses
-                                </option>
-                                <option value="Booking Request">Booking Request</option>
-                                <option value="Dental Photography Products">
-                                    Dental Photography Products
-                                </option>
-                                <option value="Shade Taking Instruments">
-                                    Shade Taking Instruments
-                                </option>
-                                <option value="Dental Burs">Dental Burs</option>
-                                <option value="General Inquiry">General Inquiry</option>
-                                <option value="Other">Other</option>
-                            </select>
+                            // <!-- Teléfono -->
+                            <div>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    placeholder="Número de teléfono*"
+                                    required
+                                    class="py-3 px-4 w-full placeholder-gray-500 text-gray-900 rounded-lg border border-gray-300 transition focus:border-red-500 focus:ring-2 focus:ring-red-500 focus:outline-none"
+                                />
+                            </div>
 
-                            <label class="flex items-start space-x-2 text-xs text-gray-400">
-                                <input type="checkbox" required class="mt-1" />
+                            // <!-- Email -->
+                            <div>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Correo electrónico*"
+                                    required
+                                    class="py-3 px-4 w-full placeholder-gray-500 text-gray-900 rounded-lg border border-gray-300 transition focus:border-red-500 focus:ring-2 focus:ring-red-500 focus:outline-none"
+                                />
+                            </div>
+
+                            // <!-- Evento -->
+                            <div class="w-full">
+                                <label for="event" class="block mb-2 font-medium text-white">
+                                    {"¿Cuál es tu interés?"}
+                                    *
+                                </label>
+
+                                <select
+                                    id="event"
+                                    name="event"
+                                    multiple
+                                    required
+                                    class="py-3 px-4 w-full placeholder-gray-400 text-gray-900 bg-white rounded-md border border-gray-300 transition appearance-none focus:border-red-500 focus:ring-2 focus:ring-red-500 focus:outline-none"
+                                >
+                                    <option value="Cursos de Fotografía Dental">
+                                        {"Cursos de Fotografía Dental"}
+                                    </option>
+                                    <option value="Cursos de Rehabilitación Adhesiva y Preparación Dental">
+                                        {"Cursos de Rehabilitación Adhesiva y Preparación Dental"}
+                                    </option>
+                                    <option value="Solicitud de Reserva">
+                                        {"Solicitud de Reserva"}
+                                    </option>
+                                    <option value="Productos de Fotografía Dental">
+                                        {"Productos de Fotografía Dental"}
+                                    </option>
+                                    <option value="Instrumentos para Toma de Color">
+                                        {"Instrumentos para Toma de Color"}
+                                    </option>
+                                    <option value="Fresas Dentales">{"Fresas Dentales"}</option>
+                                    <option value="Consulta General">{"Consulta General"}</option>
+                                    <option value="Otro">{"Otro"}</option>
+                                </select>
+                            </div>
+
+                            // <!-- Checkbox -->
+                            <label class="flex items-start space-x-2 text-xs text-gray-500">
+                                <input
+                                    type="checkbox"
+                                    required
+                                    class="mt-1 w-4 h-4 focus:ring-2 focus:ring-red-500 accent-red-600"
+                                />
                                 <span>
-                                    Al enviar tu información, aceptas recibir correos electrónicos y mensajes de texto
-                                    con información de marketing de nuestra parte. Puedes darte de baja en cualquier
-                                    momento.
+                                    Al enviar tu información, aceptas recibir correos electrónicos y mensajes de texto con información de marketing de nuestra parte. Puedes darte de baja en cualquier momento.
                                 </span>
                             </label>
 
+                            // <!-- Submit -->
                             <button
                                 type="submit"
-                                class="py-3 w-full font-medium bg-blue-600 rounded-md transition hover:bg-blue-700"
+                                class="py-3 w-full font-semibold text-white bg-red-600 rounded-full shadow-md transition transform hover:bg-red-700 hover:shadow-lg active:scale-95"
                             >
-                                Sign Up
+                                {"Enviar solicitud"}
                             </button>
                         </form>
-                    </div>
-                    <div class="mt-12">
-                        <ul class="flex space-x-4">
-                            <li>
-                                <a href="/" target="_blank" class="">
-                                    <img
-                                        src="assets/icons/facebook.svg"
-                                        alt="Facebook"
-                                        class="w-8 h-8 filter invert brightness-0"
-                                    />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/" target="_blank" class="">
-                                    <img
-                                        src="/assets/icons/instagram.svg"
-                                        alt="Instagram"
-                                        class="w-8 h-8 filter invert brightness-0"
-                                    />
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@ pub fn VideoPlayer(
 ) -> impl IntoView {
     let src = src.into();
     view! {
-        <div class="rounded-lg overflow-hidden shadow-lg">
+        <div class="overflow-hidden rounded-lg shadow-lg">
             <video
                 class="w-full h-auto"
                 src={src}

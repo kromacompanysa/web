@@ -3,286 +3,67 @@ use leptos::prelude::*;
 #[component]
 pub fn BaseGrid() -> impl IntoView {
     view! {
-        <section class="pt-16 bg-gray-50">
+        <section class="pt-10 pb-10 bg-gray-50">
             <div class="swiper mySwiperBoxes boxes-swiper">
+                // <!-- Section Title -->
                 <div class="mb-12 text-center">
-                    <h2 class="text-2xl font-bold text-gray-900 md:text-3xl">
+                    <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl">
                         {"Casos de éxito."}
                     </h2>
+                    <p class="mx-auto mt-4 max-w-2xl text-gray-600">
+                        {"Resultados reales de pacientes que confiaron en Kroma Dental Studio."}
+                    </p>
                 </div>
+
+                // <!-- Swiper Wrapper -->
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div class="swiper-slide boxes-slide">
-                        <div class="h-64">
-                            <img
-                                src="assets/images/grid_01.jpeg"
-                                alt="Live In Person Experiences"
-                                class="object-cover absolute inset-0 w-full h-full"
-                            />
-                        </div>
-                    </div>
+                    {([
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                        "assets/images/grid_01.jpeg",
+                    ])
+                        .into_iter()
+                        .map(|img| {
+                            // add more as needed
+                            view! {
+                                <div class="swiper-slide boxes-slide">
+                                    <div class="overflow-hidden relative h-64">
+                                        <img
+                                            src={img}
+                                            alt="Caso de éxito Kroma"
+                                            class="object-cover absolute inset-0 w-full h-full"
+                                        />
+                                    </div>
+                                </div>
+                            }
+                        })
+                        .collect_view()}
                 </div>
-                <div class="swiper-pagination"></div>
+
+                // <!-- Pagination -->
+                <div class="mt-8 swiper-pagination"></div>
             </div>
         </section>
     }
