@@ -18,16 +18,52 @@ window.addEventListener("TrunkApplicationStarted", () => {
   }
 });
 
-// ------------------------------
-// 🌀 Swiper Hero Carousel
-// ------------------------------
-window.addEventListener("TrunkApplicationStarted", () => {
+window.initGridSwiper = () => {
+  console.log("🟦 Initializing Grid Swiper…");
+
   if (typeof Swiper === "undefined") {
-    return console.warn("⚠️ Swiper not loaded yet for Hero.");
+    console.warn("⚠️ Swiper not loaded for GRID.");
+    return;
   }
 
-  console.log("🌀 Initializing Hero Swiper...");
-  const heroSwiper = new Swiper(".mySwiperHero", {
+  if (window.__gridSwiper) {
+    window.__gridSwiper.destroy(true, true);
+    window.__gridSwiper = null;
+  }
+
+  window.__gridSwiper = new Swiper(".mySwiperBoxes", {
+    slidesPerView: 3,
+    grid: {
+      rows: 2,
+      fill: "row",
+    },
+    spaceBetween: 8,
+    pagination: {
+      el: ".mySwiperBoxes .swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      320: { slidesPerView: 1, grid: { rows: 2, fill: "row" } },
+      640: { slidesPerView: 3, grid: { rows: 2, fill: "row" } },
+      1024: { slidesPerView: 5, grid: { rows: 2, fill: "row" } },
+    },
+  });
+};
+
+window.initHeroSwiper = function () {
+  console.log("🟦 Initializing Hero Swiper…");
+
+  if (typeof Swiper === "undefined") {
+    console.warn("Swiper not loaded");
+    return;
+  }
+
+  if (window.__heroSwiper) {
+    window.__heroSwiper.destroy(true, true);
+    window.__heroSwiper = null;
+  }
+
+  window.__heroSwiper = new Swiper(".mySwiperHero", {
     slidesPerView: 3,
     spaceBetween: 30,
     pagination: {
@@ -40,32 +76,4 @@ window.addEventListener("TrunkApplicationStarted", () => {
       1024: { slidesPerView: 3 },
     },
   });
-});
-
-// ------------------------------
-// 🟦 Swiper Grid Carousel
-// ------------------------------
-window.addEventListener("TrunkApplicationStarted", () => {
-  if (typeof Swiper === "undefined") {
-    return console.warn("⚠️ Swiper not loaded yet for Boxes.");
-  }
-
-  console.log("🟦 Initializing Grid Swiper...");
-  const gridSwiper = new Swiper(".mySwiperBoxes", {
-    slidesPerView: 3,
-    grid: {
-      rows: 2,
-      fill: "row",
-    },
-    spaceBetween: 1,
-    pagination: {
-      el: ".mySwiperBoxes .swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      320: { slidesPerView: 1, grid: { rows: 2, fill: "row" } },
-      640: { slidesPerView: 3, grid: { rows: 2, fill: "row" } },
-      1024: { slidesPerView: 5, grid: { rows: 2, fill: "row" } },
-    },
-  });
-});
+};

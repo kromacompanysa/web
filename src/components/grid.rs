@@ -1,10 +1,34 @@
 use leptos::prelude::*;
+use leptos_router::hooks::use_location;
+use wasm_bindgen::prelude::*;
+
+#[wasm_bindgen]
+extern "C" {
+    #[wasm_bindgen(js_name = initGridSwiper)]
+    fn init_grid_swiper();
+}
 
 #[component]
 pub fn BaseGrid() -> impl IntoView {
+    let root_ref = NodeRef::<leptos::html::Div>::new();
+    let location = use_location();
+
+    Effect::new({
+        let root_ref = root_ref.clone();
+        move |_| {
+            let _ = location.pathname.get();
+
+            if root_ref.get().is_none() {
+                return;
+            }
+
+            init_grid_swiper();
+        }
+    });
+
     view! {
         <section class="pt-10 pb-10 bg-gray-50">
-            <div class="swiper mySwiperBoxes boxes-swiper">
+            <div node_ref=root_ref class="swiper mySwiperBoxes boxes-swiper">
                 // <!-- Section Title -->
                 <div class="mb-12 text-center">
                     <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl">

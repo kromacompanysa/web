@@ -1,8 +1,32 @@
 use leptos::prelude::*;
+use leptos_router::hooks::use_location;
+use wasm_bindgen::prelude::*;
+
+#[wasm_bindgen]
+extern "C" {
+    #[wasm_bindgen(js_name = initHeroSwiper)]
+    fn init_hero_swiper();
+}
 
 #[component]
 pub fn BaseCarousel() -> impl IntoView {
-    // ✅ Return the view
+    let root_ref = NodeRef::<leptos::html::Div>::new();
+    let location = use_location();
+
+    // Every time user navigates → re-run JS
+    Effect::new({
+        let root_ref = root_ref.clone();
+        move |_| {
+            let _ = location.pathname.get();
+
+            if root_ref.get().is_none() {
+                return;
+            }
+
+            init_hero_swiper();
+        }
+    });
+
     view! {
         <section class="pt-20 pb-10 bg-gradient-to-b from-gray-50 to-white">
             <div class="px-4 mx-auto max-w-6xl">
@@ -20,7 +44,7 @@ pub fn BaseCarousel() -> impl IntoView {
                 </div>
 
                 // <!-- Swiper -->
-                <div class="swiper mySwiperHero hero-swiper">
+                <div node_ref=root_ref class="swiper mySwiperHero hero-swiper">
                     <div class="swiper-wrapper">
                         {([
                             (
